@@ -1,6 +1,8 @@
 
 package sistema.de.gestión.de.transporte.turístico;
 
+import java.time.Year;
+
 public abstract class Vehiculo {
     private String patente;
     private String  marca;
@@ -8,29 +10,42 @@ public abstract class Vehiculo {
     private int anioFabricacion;
 
     public Vehiculo(String patente, String marca, int capacidadPasajeros, int anioFabricacion) {
-        this.patente = patente;
-        this.marca = marca;
-        this.capacidadPasajeros = capacidadPasajeros;
-        this.anioFabricacion = anioFabricacion;
+        setPatente(patente);
+        setMarca(marca);
+        setCapacidadPasajeros(capacidadPasajeros);
+        setAnioFabricacion(anioFabricacion);
     }
 
     public String getPatente() {
         return patente;
     }
-
+    
     public void setPatente(String patente) {
+        if (patente == null || patente.trim().isEmpty()) {
+            throw new IllegalArgumentException("La patente no puede estar vacia.");
+        }
         this.patente = patente;
     }
+    
+    
     
     public String getMarca() {
         return marca;
     }
-
+    
     public void setMarca(String marca) {
+        if(marca == null || marca.trim().isEmpty()) { //    validacion a voluntad
+            throw new IllegalArgumentException("La marca no puede estar vacia");
+        }
         this.marca = marca;
     }
 
+    
+    
     public void setCapacidadPasajeros(int capacidadPasajeros) {
+        if (capacidadPasajeros <= 0) {
+            throw new IllegalArgumentException("La capacidad de pasajeros no puede ser 0 o menos.");
+        }
         this.capacidadPasajeros = capacidadPasajeros;
     }
     
@@ -38,20 +53,30 @@ public abstract class Vehiculo {
         return capacidadPasajeros;
     }
     
+    
+    
     public void setAnioFabricacion(int anioFabricacion) {
+        if (anioFabricacion < 1990) {
+            throw new IllegalArgumentException("No se permiten vehiculos con fecha de fabricacion antes de 1990.");
+        }
+        if (anioFabricacion > Year.now().getValue()) {
+            throw new IllegalArgumentException("Vehiculo con fecha de fabricacion inexistente.");
+        }
         this.anioFabricacion = anioFabricacion;
     }
-
+    
     public int getAnioFabricacion() {
         return anioFabricacion;
     }
+    
+
     
 
     public abstract void realizarServiciosTuristicos();
     
     @Override
     public String toString() {
-        return ("Patente: " + patente +"\nMarca: " + marca + "\nCapacidad de pasajeros: " + capacidadPasajeros);
+        return ("Patente: " + patente +"\nMarca: " + marca + "\nCapacidad de pasajeros: " + capacidadPasajeros + "\nAnio de fabricacion: " + anioFabricacion);
     }
     
 }
