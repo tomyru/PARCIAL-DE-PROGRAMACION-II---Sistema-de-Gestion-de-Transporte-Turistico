@@ -14,7 +14,7 @@ public class ColectivoTuristico extends Vehiculo {
 
     public void setCantidadPisos(int cantidadPisos) {
         if (cantidadPisos < 1 || cantidadPisos > 2) {
-            throw new IllegalArgumentException("Solo puede tener 1 o 2 pisos.");
+            throw new IllegalArgumentException("ERROR; El colectivo turistico solo puede tener 1 o 2 pisos.");
         }
         this.cantidadPisos = cantidadPisos;
     }

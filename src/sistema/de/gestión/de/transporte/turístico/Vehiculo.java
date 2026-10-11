@@ -57,10 +57,10 @@ public abstract class Vehiculo {
     
     public void setAnioFabricacion(int anioFabricacion) {
         if (anioFabricacion < 1990) {
-            throw new IllegalArgumentException("No se permiten vehiculos con fecha de fabricacion antes de 1990.");
+            throw new IllegalArgumentException("ERROR; El Vehiculo no puede tener una fecha de fabricacion antes de 1990.");
         }
         if (anioFabricacion > Year.now().getValue()) {
-            throw new IllegalArgumentException("Vehiculo con fecha de fabricacion inexistente.");
+            throw new IllegalArgumentException("ERROR; El Vehiculo no puede tener una fecha de fabricacion inexistente.");
         }
         this.anioFabricacion = anioFabricacion;
     }

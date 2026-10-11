@@ -11,13 +11,17 @@ public class SistemaDeGestiónDeTransporteTurístico {
         System.out.println(colectivo);
         colectivo.realizarServiciosTuristicos();
         
+        
         Vehiculo van_uno = new VanEjecutiva
         ("F552", "Toyota", 20, 2020, true);
         System.out.println(van_uno);
         van_uno.realizarServiciosTuristicos();
         
         
-        
+        Vehiculo lancha = new LanchaTuristica
+        ("G343", "Yamaha", 6, 2022, "Nafta");
+        System.out.println(lancha);
+        lancha.realizarServiciosTuristicos();
         
         
         
