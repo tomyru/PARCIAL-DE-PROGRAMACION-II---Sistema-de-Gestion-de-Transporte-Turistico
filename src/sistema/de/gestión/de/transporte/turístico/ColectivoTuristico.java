@@ -21,7 +21,7 @@ public class ColectivoTuristico extends Vehiculo {
 
     @Override
     public void realizarServiciosTuristicos() {
-        System.out.println("Se realizo servicio turistico en el Colectivo turistico de " + cantidadPisos + " pisos");
+        System.out.println("Se realizo el servicio turistico en el Colectivo de " + cantidadPisos + " pisos");
     }
     
     @Override
