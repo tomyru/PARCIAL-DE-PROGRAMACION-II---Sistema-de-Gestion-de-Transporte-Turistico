@@ -9,6 +9,11 @@ public class FlotaVehiculos {
             vehiculos = new ArrayList<>();
     }
 
+    public ArrayList<Vehiculo> getVehiculos() {
+        return vehiculos;
+    }
+
+    
     public Vehiculo buscarPorPatente(String patente) {
         if (patente == null) {
             return null;
@@ -24,7 +29,7 @@ public class FlotaVehiculos {
 
     public void agregarVehiculo(Vehiculo v) {
         if (buscarPorPatente(v.getPatente()) != null) {
-            throw new IllegalArgumentException("ERROR; La patente del vehiculo que desea agreagar ya esta registrada.");
+            throw new IllegalArgumentException("ERROR; La patente del vehiculo que desea agregar ya esta registrada.");
         }
         else {
             vehiculos.add(v);
@@ -32,6 +37,44 @@ public class FlotaVehiculos {
     }
 
     
-
+    public ArrayList<Vehiculo> filtrarPorCapacidad(int minimo) {
+        ArrayList<Vehiculo> resultado =  new ArrayList<>();
+        for (int i = 0; i < vehiculos.size(); i++) {
+            if (vehiculos.get(i).getCapacidadPasajeros() > minimo) {
+                resultado.add(vehiculos.get(i));
+            }
+        }
+        return resultado;
+    }
+    
+    
+    public void mostrarLista(ArrayList<Vehiculo> lista) {
+        if (lista.isEmpty()) {
+            System.out.println("No hay vehiculos para mostrar.");
+        }
+        else {
+            for (int i = 0; i < lista.size(); i++) {
+                System.out.println(lista.get(i));
+                System.out.println();
+            }  
+        }
+    }
+    
+    
+    public void realizarServiciosTuristicosTodos() {
+        if (vehiculos.isEmpty()) {
+            System.out.println("No hay vehiculos cargados.");
+        }
+        else {
+            for (int i = 0; i < vehiculos.size(); i++) {
+                vehiculos.get(i).realizarServiciosTuristicos();
+            }
+        }
+    }
+    
+    
+    
+    
+    
     
 }

@@ -26,7 +26,7 @@ public class LanchaTuristica extends Vehiculo {
 
     @Override
     public void realizarServiciosTuristicos() {
-        System.out.println("Se realizo el servicio turistico en la Lancha con el motor " + tipoMotor);
+        System.out.println("Se realizo el servicio turistico en la Lancha con el motor de " + tipoMotor);
     }
     
     @Override
