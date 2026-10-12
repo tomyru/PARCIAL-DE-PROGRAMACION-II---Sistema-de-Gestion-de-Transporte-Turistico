@@ -4,7 +4,7 @@ public class SistemaDeGestiónDeTransporteTurístico {
 
     public static void main(String[] args) {
         
-        
+        FlotaVehiculos flota = new FlotaVehiculos();
         
         Vehiculo colectivo = new ColectivoTuristico
         ("F232", "Mercedes Benz", 20, 2020, 2);
@@ -22,6 +22,18 @@ public class SistemaDeGestiónDeTransporteTurístico {
         ("G343", "Yamaha", 6, 2022, "Nafta");
         System.out.println(lancha);
         lancha.realizarServiciosTuristicos();
+        
+        flota.agregarVehiculo(new ColectivoTuristico("AA123BB", "Mercedes Benz", 45, 2020, 2));
+        flota.agregarVehiculo(new VanEjecutiva("AC789EF", "Renault", 15, 2021, true));
+//        flota.agregarVehiculo(new ColectivoTuristico("AA123BB", "Scania", 50, 2022, 1)); // duplicada
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         

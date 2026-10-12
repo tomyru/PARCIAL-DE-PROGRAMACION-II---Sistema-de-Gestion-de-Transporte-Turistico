@@ -24,7 +24,7 @@ public abstract class Vehiculo {
         if (patente == null || patente.trim().isEmpty()) {
             throw new IllegalArgumentException("La patente no puede estar vacia.");
         }
-        this.patente = patente;
+        this.patente = patente.trim().toUpperCase();
     }
     
     
