@@ -1,6 +1,7 @@
 package sistema.de.gestión.de.transporte.turístico;
 
 public class ColectivoTuristico extends Vehiculo {
+
     private int cantidadPisos;
 
     public ColectivoTuristico(String patente, String marca, int capacidadPasajeros, int anioFabricacion, int cantidadPisos) {
@@ -24,10 +25,10 @@ public class ColectivoTuristico extends Vehiculo {
         String palabra = (cantidadPisos == 1) ? "piso" : "pisos";
         System.out.println("Se realizo el servicio turistico en el Colectivo de " + cantidadPisos + " " + palabra);
     }
-    
+
     @Override
-    public String toString() {  
-       return "Vehiculo: Colectivo Turistico\n" + super.toString() +  "\nCantidad de pisos: " + cantidadPisos;
+    public String toString() {
+        return "Vehiculo: Colectivo Turistico\n" + super.toString() + "\nCantidad de pisos: " + cantidadPisos;
     }
-    
+
 }
