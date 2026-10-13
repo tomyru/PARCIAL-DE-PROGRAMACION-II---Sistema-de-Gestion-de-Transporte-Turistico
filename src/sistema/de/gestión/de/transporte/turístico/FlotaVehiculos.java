@@ -46,8 +46,7 @@ public class FlotaVehiculos {
         }
         return resultado;
     }
-    
-    
+        
     public void mostrarLista(ArrayList<Vehiculo> lista) {
         if (lista.isEmpty()) {
             System.out.println("No hay vehiculos para mostrar.");
@@ -60,7 +59,6 @@ public class FlotaVehiculos {
         }
     }
     
-    
     public void realizarServiciosTuristicosTodos() {
         if (vehiculos.isEmpty()) {
             System.out.println("No hay vehiculos cargados.");
@@ -71,6 +69,8 @@ public class FlotaVehiculos {
             }
         }
     }
+    
+    
     
     
     

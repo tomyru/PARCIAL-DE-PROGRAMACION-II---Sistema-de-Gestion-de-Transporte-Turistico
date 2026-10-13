@@ -22,7 +22,7 @@ public abstract class Vehiculo {
     
     public void setPatente(String patente) {
         if (patente == null || patente.trim().isEmpty()) {
-            throw new IllegalArgumentException("La patente no puede estar vacia.");
+            throw new IllegalArgumentException("ERROR; La patente no puede estar vacia.");
         }
         this.patente = patente.trim().toUpperCase();
     }
@@ -34,17 +34,17 @@ public abstract class Vehiculo {
     }
     
     public void setMarca(String marca) {
-        if(marca == null || marca.trim().isEmpty()) { //    validacion a voluntad
-            throw new IllegalArgumentException("La marca no puede estar vacia");
+        if(marca == null || marca.trim().isEmpty()) {
+            throw new IllegalArgumentException("ERROR; La marca no puede estar vacia");
         }
-        this.marca = marca;
+        this.marca = marca.trim();
     }
 
     
     
     public void setCapacidadPasajeros(int capacidadPasajeros) {
         if (capacidadPasajeros <= 0) {
-            throw new IllegalArgumentException("La capacidad de pasajeros no puede ser 0 o menos.");
+            throw new IllegalArgumentException("ERROR; La capacidad de pasajeros no puede ser 0 o menos.");
         }
         this.capacidadPasajeros = capacidadPasajeros;
     }
