@@ -36,7 +36,7 @@ public class SistemaDeGestiónDeTransporteTurístico {
                     case 2:    
                         System.out.println("    -Mostrar todos los vehiculos-");
                         separador();
-                        flota.mostrarLista(flota.getVehiculos());
+                        flota.mostrarVehiculos(flota.getVehiculos());
                         break;
 
                     case 3:    
@@ -66,27 +66,30 @@ public class SistemaDeGestiónDeTransporteTurístico {
                         separador();
                         System.out.print("Ingrese la capacidad minima:  ");
                         int minimo = Integer.parseInt(input.nextLine());
-                        flota.mostrarLista(flota.filtrarPorCapacidad(minimo));
+                        flota.mostrarVehiculos(flota.filtrarPorCapacidad(minimo));
                         break;
                     }
 
                     case 6:    
                         System.out.println("    -Mostrar vehiculos ordenados por anio descendente-");
                         separador();
+                        flota.mostrarVehiculos(flota.ordenarPorAnioDesc());                      
                         break;
                         
                     case 7:    
                         System.out.println("    -Mostrar vehiculos ordenados por capacidad descendente-");
                         separador();
+                        flota.mostrarVehiculos(flota.ordenarPorCapacidadDesc());
                         break;
                         
                     case 8:
-                          System.out.println("    -Salir-");
-                          separador();
-                          break;
+                        System.out.println("    -Salir-");
+                        separador();
+                        break;
                           
                     default:
                         System.out.println("    -Opcion incorrecta-");
+                        separador();
                 } 
             } catch (NumberFormatException e) {
                 System.out.println("Ingrese un numero valido");
@@ -148,7 +151,7 @@ public class SistemaDeGestiónDeTransporteTurístico {
             }
         }
     }
-        private static void separador() {
+    private static void separador() {
         System.out.println("--------------------------------------------------------------------------");
     }
 

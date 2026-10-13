@@ -26,7 +26,7 @@ public class VanEjecutiva extends Vehiculo {
     @Override
     public String toString() {
        String siOno = (aireAcondicionado) ? "Si" : "No";
-       return super.toString() + "\nAire acondicionado: " + siOno;
+       return "Vehiculo: Van Ejecutiva\n"+ super.toString() + "\nAire acondicionado: " + siOno;
     }
     
     

@@ -13,7 +13,6 @@ public class FlotaVehiculos {
         return vehiculos;
     }
 
-    
     public Vehiculo buscarPorPatente(String patente) {
         if (patente == null) {
             return null;
@@ -36,7 +35,6 @@ public class FlotaVehiculos {
         }
     }
 
-    
     public ArrayList<Vehiculo> filtrarPorCapacidad(int minimo) {
         ArrayList<Vehiculo> resultado =  new ArrayList<>();
         for (int i = 0; i < vehiculos.size(); i++) {
@@ -47,7 +45,7 @@ public class FlotaVehiculos {
         return resultado;
     }
         
-    public void mostrarLista(ArrayList<Vehiculo> lista) {
+    public void mostrarVehiculos(ArrayList<Vehiculo> lista) {
         if (lista.isEmpty()) {
             System.out.println("No hay vehiculos para mostrar.");
         }
@@ -70,7 +68,33 @@ public class FlotaVehiculos {
         }
     }
     
+    public ArrayList<Vehiculo> ordenarPorAnioDesc() {
+        ArrayList<Vehiculo> copia = new ArrayList<>(vehiculos);
+        for (int i = 0; i < copia.size() - 1; i++) {
+            for (int j = i + 1; j < copia.size(); j++) {
+                if (copia.get(i).getAnioFabricacion() < copia.get(j).getAnioFabricacion()) {
+                    Vehiculo aux = copia.get(i);
+                    copia.set(i, copia.get(j));
+                    copia.set(j, aux);
+                }
+            }
+        }
+        return copia;
+    }
     
+    public ArrayList<Vehiculo> ordenarPorCapacidadDesc() {
+    ArrayList<Vehiculo> copia = new ArrayList<>(vehiculos);
+    for (int i = 0; i < copia.size() - 1; i++) {
+        for (int j = i + 1; j < copia.size(); j++) {
+            if (copia.get(i).getCapacidadPasajeros() < copia.get(j).getCapacidadPasajeros()) {
+                Vehiculo aux = copia.get(i);
+                copia.set(i, copia.get(j));
+                copia.set(j, aux);
+            }
+        }
+    }
+    return copia;
+     }
     
     
     

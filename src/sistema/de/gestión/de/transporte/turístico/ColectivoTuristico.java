@@ -21,12 +21,13 @@ public class ColectivoTuristico extends Vehiculo {
 
     @Override
     public void realizarServiciosTuristicos() {
-        System.out.println("Se realizo el servicio turistico en el Colectivo de " + cantidadPisos + " pisos");
+        String palabra = (cantidadPisos == 1) ? "piso" : "pisos";
+        System.out.println("Se realizo el servicio turistico en el Colectivo de " + cantidadPisos + " " + palabra);
     }
     
     @Override
-    public String toString() {
-       return super.toString() +  "\nCantidad de pisos: " + cantidadPisos;
+    public String toString() {  
+       return "Vehiculo: Colectivo Turistico\n" + super.toString() +  "\nCantidad de pisos: " + cantidadPisos;
     }
     
 }

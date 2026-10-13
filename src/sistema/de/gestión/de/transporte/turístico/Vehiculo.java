@@ -76,7 +76,7 @@ public abstract class Vehiculo {
     
     @Override
     public String toString() {
-        return ("Patente: " + patente +"\nMarca: " + marca + "\nCapacidad de pasajeros: " + capacidadPasajeros + "\nAnio de fabricacion: " + anioFabricacion);
+        return "Patente: " + patente +"\nMarca: " + marca + "\nCapacidad de pasajeros: " + capacidadPasajeros + "\nAnio de fabricacion: " + anioFabricacion;
     }
     
 }

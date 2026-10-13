@@ -21,17 +21,18 @@ public class LanchaTuristica extends Vehiculo {
              throw new IllegalArgumentException("ERROR; Solo se permite motor de Nafta, Diesel o Electrico");
         }
         
-        this.tipoMotor = tipoMotor.toUpperCase();
+        this.tipoMotor = tipoMotor.trim().toUpperCase();
     }
 
     @Override
     public void realizarServiciosTuristicos() {
-        System.out.println("Se realizo el servicio turistico en la Lancha con el motor de " + tipoMotor);
+        System.out.println("Se realizo el servicio turistico en la Lancha con el motor de " + tipoMotor.toLowerCase());
     }
     
     @Override
     public String toString() {
-        return (super.toString() + "\nTipo de motor: " + tipoMotor);
+        
+        return "Vehiculo: Lancha Turistica\n" + super.toString() + "\nTipo de motor: " + tipoMotor;
     }
     
 }
